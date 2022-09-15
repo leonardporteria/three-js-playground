@@ -12,6 +12,7 @@ export default class Camera {
     this.createPerspectiveCamera();
     this.createOrthographicCamera();
   }
+
   createPerspectiveCamera() {
     this.perspectiveCamera = new THREE.PerspectiveCamera(
       35,

@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 import Experience from "./Experience";
 
@@ -11,12 +12,14 @@ export default class Renderer {
     this.camera = this.experience.camera;
 
     this.setRenderer();
+    this.enableOrbitControls();
   }
 
   setRenderer() {
     this.renderer = new THREE.WebGLRenderer({
       canvas: this.canvas,
       antialias: true,
+      alpha: true,
     });
 
     this.renderer.physicallyCorrectLights = true;
@@ -27,6 +30,10 @@ export default class Renderer {
     this.renderer.shadowMap.type = THREE.PCFShadowMap;
     this.renderer.setSize(this.sizes.width, this.sizes.height);
     this.renderer.setPixelRatio(this.sizes.pixelRatio);
+  }
+
+  enableOrbitControls() {
+    new OrbitControls(this.camera.perspectiveCamera, this.renderer.domElement);
   }
 
   resize() {
