@@ -10,6 +10,7 @@ export default class Renderer {
     this.scene = this.experience.scene;
     this.canvas = this.experience.canvas;
     this.camera = this.experience.camera;
+    this.clock = new THREE.Clock();
 
     this.setRenderer();
     this.enableOrbitControls();

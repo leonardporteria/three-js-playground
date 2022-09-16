@@ -23,6 +23,11 @@ export default class Room {
     this.actualRoom.children.forEach((child) => {
       child.castShadow = true;
       child.receiveShadow = true;
+      console.log(child);
+
+      if (child.name === "Gear") {
+        child.children[0].position.y = 5;
+      }
     });
   }
 
@@ -30,8 +35,6 @@ export default class Room {
     this.mixer = new THREE.AnimationMixer(this.actualRoom);
     this.animate = this.mixer.clipAction(this.room.animations[3]);
     this.animate.play();
-    console.log(this.room.animations);
-    console.log(this.room);
   }
 
   resize() {}
