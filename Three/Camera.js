@@ -18,7 +18,7 @@ export default class Camera {
       35,
       this.sizes.aspect,
       0.1,
-      100
+      1000
     );
 
     this.perspectiveCamera.position.z = 5;
