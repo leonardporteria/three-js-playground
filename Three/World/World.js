@@ -5,6 +5,8 @@ import Experience from "../Experience.js";
 import Room from "./Room.js";
 import Environment from "./Environment.js";
 
+import { tick } from "../../main.js";
+
 export default class World {
   constructor() {
     this.experience = new Experience();
@@ -18,6 +20,7 @@ export default class World {
       console.log("created room");
       this.environment = new Environment();
       this.room = new Room();
+      tick();
     });
   }
 

@@ -26,7 +26,7 @@ export default class Room {
       console.log(child);
 
       if (child.name === "Gear") {
-        child.children[0].position.y = 5;
+        // child.children[0].position.y = 5;
       }
     });
   }

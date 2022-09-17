@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import gsap from "gsap";
 
 import Sizes from "./Utils/Sizes.js";
 import Time from "./Utils/Time.js";
@@ -21,6 +22,7 @@ export default class Experience {
     Experience.instance = this;
     this.canvas = canvas;
     this.scene = new THREE.Scene();
+    this.tl = gsap.timeline();
     this.time = new Time();
     this.sizes = new Sizes();
     this.camera = new Camera();
