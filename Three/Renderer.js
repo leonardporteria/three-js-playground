@@ -13,7 +13,6 @@ export default class Renderer {
     this.clock = new THREE.Clock();
 
     this.setRenderer();
-    this.enableOrbitControls();
   }
 
   setRenderer() {
